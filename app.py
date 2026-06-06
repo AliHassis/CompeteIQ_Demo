@@ -25,8 +25,12 @@ st.set_page_config(
 st.markdown("""
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
-  html, body, [class*="css"] { font-family: 'IBM Plex Sans Arabic', sans-serif; direction: rtl; }
-
+  html, body, [class*="css"] { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+  .main .block-container { direction: rtl; }
+  [data-testid="stSidebar"] > div { direction: rtl; }
+  [data-testid="stToolbar"] { visibility: hidden; }
+  [data-testid="stAppDeployButton"] { display: none; }
+  [data-testid="collapsedControl"] { position: fixed; right: 0.5rem; top: 0.5rem; z-index: 9999; }
   .main-header {
     background: linear-gradient(135deg, #1a1f3a 0%, #2d3875 50%, #1a1f3a 100%);
     border-radius: 16px; padding: 2rem 2.5rem; margin-bottom: 2rem;
