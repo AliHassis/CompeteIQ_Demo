@@ -24,13 +24,31 @@ st.set_page_config(
 # ── CSS ───────────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
+ <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
   html, body, [class*="css"] { font-family: 'IBM Plex Sans Arabic', sans-serif; }
   .main .block-container { direction: rtl; }
   [data-testid="stSidebar"] > div { direction: rtl; }
-  [data-testid="stToolbar"] { visibility: hidden; }
-  [data-testid="stAppDeployButton"] { display: none; }
-  [data-testid="collapsedControl"] { position: fixed; right: 0.5rem; top: 0.5rem; z-index: 9999; }
+
+  [data-testid="stAppDeployButton"] { display: none !important; }
+  #MainMenu { visibility: hidden !important; }
+  footer { visibility: hidden !important; }
+  header { background-color: transparent !important; }
+
+  [data-testid="collapsedControl"] {
+    position: fixed !important;
+    top: 15px !important;
+    left: 15px !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 999999 !important;
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    border-radius: 8px !important;
+  }
+
   .main-header {
     background: linear-gradient(135deg, #1a1f3a 0%, #2d3875 50%, #1a1f3a 100%);
     border-radius: 16px; padding: 2rem 2.5rem; margin-bottom: 2rem;
@@ -70,6 +88,7 @@ st.markdown("""
   .stTabs [data-baseweb="tab"] { font-size: 0.95rem; font-weight: 600; }
   .stButton > button { border-radius: 10px; font-weight: 600; font-size: 1rem; padding: 0.6rem 2rem; }
   [data-testid="stSidebar"] { background: #f8faff; border-left: 1px solid #e8ecf8; }
+</style>
 </style>
 """, unsafe_allow_html=True)
 
